@@ -5,7 +5,7 @@
 # silakan di resubmit dengan nilai variable priority yang lebih besar dari
 # nilai priority submisi sebelumnya
 # JIKA TIDAK ADA VARIABLE priority DIANGGAP priority=0
-priority = 0
+priority = 1
 
 #netacad email cth: 'abcd@gmail.com'
 email='utomopryo@gmail.com'
@@ -34,10 +34,10 @@ def counter_item(items):
    kamusBaru={}
    for x in items:
    	jml = items.count(x)
-   	kamusBaru[x] = str(jml)
+   	kamusBaru[x] = int(jml)
    return kamusBaru
 
-print (counter_item(['Apple','Apple','Apple','Blueberries','Blueberries','Blueberries','Apple','Avocado','Banana','Blackberries','Blueberries','Cherries']))
+print (counter_item(['Cherries', 'Blueberries', 'Banana', 'Avocado', 'Blackberries', 'Banana', 'Blueberries', 'Avocado', 'Banana', 'Blackberries']))
 
 print ('========= END =========')
 print()
@@ -102,8 +102,8 @@ def print_summary(item,fprice):
   items = counter_item(item)
   for x in fruits:
   	if items.get(x) != None:
-  		subtotal = int(items.get(x)) * int(fprice.get(x)) 
-  		print (items.get(x),x,':',subtotal,sep=' ')
+  		  subtotal = int(items.get(x)) * int(fprice.get(x))
+  		  print (items.get(x),x+" :",subtotal,sep=' ',end='')
 
   print ("total :",total_price(counter_item(item),fprice),sep=' ')
   print ("discounted price :", discounted_price(total_price(counter_item(item),fprice),10,minprice=100),sep=' ')
